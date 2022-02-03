@@ -837,3 +837,16 @@
     language: 'script'
     description: "Run 'golangci-lint run [$ARGS] $FILE' for each staged .go file"
     pass_filenames: true
+# ==============================================================================
+# go-generate
+#   * File-based
+#   * Executes if any .go files modified
+# ==============================================================================
+-   id: go-generate
+    name: 'go-generate'
+    entry: go-generate.sh
+    types: [go]
+    exclude: '(^|/)vendor/'
+    language: 'script'
+    description: "Run 'go generate $FILE' for each staged .go file"
+    pass_filenames: true
